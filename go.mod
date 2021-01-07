@@ -1,5 +1,5 @@
 module github.com/gogf/gf-empty
 
-require github.com/gogf/gf latest
+go 1.14
 
-go 1.11
+require github.com/gogf/gf v1.15.0

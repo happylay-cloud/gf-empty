@@ -1,17 +1,20 @@
-# HTTP Server
+# HTTP服务
 [server]
 	Address     = ":8080"
 	ServerRoot  = "public"
 	ServerAgent = "gf-app"
+	AccessLogEnabled = true
+	ErrorLogEnabled  = true
+	pprofEnabled     = false
 	LogPath     = "./log/gf-app/server"
 
-# Logger.
+# 日志
 [logger]
     Path        = "./log/gf-app"
     Level       = "all"
     Stdout      = true
 
-# Template.
+# 模板
 [viewer]
     Path        = "template"
     DefaultFile = "index.html"
@@ -20,11 +23,11 @@
     "}"
     ]
 
-# Database.
+# 数据库
 [database]
     link  = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
     debug = true
-    # Database logger.
+    # 数据库日志
     [database.logger]
         Path   = "./log/gf-app/sql"
         Level  = "all"

@@ -15,7 +15,7 @@ func Hello(r *ghttp.Request) {
 // @Description 接口说明
 // @Accept      application/json
 // @Produce     application/json
-// @Param       id path string false               "Restful接口参数"
+// @Param       id path string true                "Restful接口参数"
 // @Param       field query string false           "Get请求参数"
 // @Param       timestamp formData string false    "时间戳"
 // @Param       Authorization header string false  "Bearer 用户令牌"

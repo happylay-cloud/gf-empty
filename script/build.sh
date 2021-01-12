@@ -19,7 +19,7 @@ gfctl swagger --pack -y
 # 打包静态资源文件（根据选择注释）
 gfctl pack public,template packed/data.go -y
 
-cd ./cmd
+cd ./script
 
 # linux_amd64环境
 gfctl build ../main.go --cgo --CC=x86_64-linux-musl-gcc --CGO_LDFLAGS="-static" --name $APP_NAME --arch amd64 --system linux --version $VERSION -p ../bin

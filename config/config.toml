@@ -25,8 +25,12 @@
 
 # 数据库
 [database]
-    link  = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
-    debug = true
+    [database.default]
+        link = "sqlite:./db/sqlite3.db"
+        debug = true
+    [database.user]
+        link = "mysql:root:root@tcp(127.0.0.1:3306)/user"
+        debug = true
     # 数据库日志
     [database.logger]
         Path   = "./log/gf-app/sql"

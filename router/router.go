@@ -17,5 +17,6 @@ func init() {
 		group.Middleware(component.MiddlewareCORS)
 		group.ALL("/", hello.Hello)
 		group.POST("/version/:id", hello.GfVersion)
+		group.POST("/page", hello.Page)
 	})
 }

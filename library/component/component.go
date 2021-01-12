@@ -21,6 +21,6 @@ func MiddlewareErrorHandler(r *ghttp.Request) {
 		// 清除系统异常响应
 		r.Response.ClearBuffer()
 		// 返回自定义异常响应
-		response.FailWithEx(r,err.Error())
+		response.FailWithEx(r, err.Error())
 	}
 }

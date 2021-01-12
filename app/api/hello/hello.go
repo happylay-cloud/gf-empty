@@ -27,6 +27,6 @@ func Hello(r *ghttp.Request) {
 // @Router /version/{id} [post]
 func GfVersion(r *ghttp.Request) {
 	var _ = 1 / r.GetInt("id")
-	g.Log("business").Info("自定义业务日志示例。")
+	g.Log("business").Line(true).Info("自定义业务日志示例。")
 	response.OkWithData(r, gf.VERSION)
 }

@@ -1,13 +1,15 @@
 package hello
 
 import (
-    "github.com/gogf/gf"
-    "github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf"
+	"github.com/gogf/gf-empty/library/response"
+	"github.com/gogf/gf/frame/g"
+	"github.com/gogf/gf/net/ghttp"
 )
 
-// Hello是一个用于输出"Hello World!"的演示路由处理程序。
+// Hello 是一个用于输出"Hello World!"的演示路由处理程序。
 func Hello(r *ghttp.Request) {
-    r.Response.Writeln("Hello World!")
+	r.Response.Writeln("Hello World!")
 }
 
 // @Tags        接口标签
@@ -20,9 +22,11 @@ func Hello(r *ghttp.Request) {
 // @Param       timestamp formData string false    "时间戳"
 // @Param       Authorization header string false  "Bearer 用户令牌"
 // @Security ApiKeyAuth
-// @Success 201 {object} string
-// @Failure 400 {object} string
+// @Success 200 {object} response.JsonResponse     "响应结果"
+// @Failure 201 {object} string
 // @Router /version/{id} [post]
 func GfVersion(r *ghttp.Request) {
-    r.Response.Writeln(gf.VERSION)
+	var _ = 1 / r.GetInt("id")
+	g.Log("business").Info("自定义业务日志示例。")
+	response.OkWithData(r, gf.VERSION)
 }

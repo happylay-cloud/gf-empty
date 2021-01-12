@@ -31,7 +31,7 @@ func result(r *ghttp.Request, code int, message string, data interface{},excepti
 	}); err != nil {
 		g.Log().Error(err)
 	}
-	// 返回数据，并退出http请求
+	// 仅退出当前执行的逻辑方法
 	r.Exit()
 }
 
@@ -65,13 +65,18 @@ func FailWithMsg(r *ghttp.Request, message string) {
 	result(r, FAIL, message, map[string]interface{}{},nil)
 }
 
+// 操作失败（自定义异常信息）
+func FailWithEx(r *ghttp.Request,exception interface{}) {
+	result(r, FAIL, "操作失败", nil, exception)
+}
+
 // 操作失败（自定义错误码和消息）
-func FailWithCodeAndMsg(r *ghttp.Request, code int,message string ) {
+func FailWithCodeAndMsg(r *ghttp.Request, code int, message string ) {
 	result(r, code, message,nil,nil)
 }
 
 // 操作失败（自定义错误码、消息、异常信息）
-func FailWithCodeMsgAndEx(r *ghttp.Request, code int,message string ,exception interface{}) {
+func FailWithCodeMsgAndEx(r *ghttp.Request, code int, message string , exception interface{}) {
 	result(r, code, message,nil,exception)
 }
 

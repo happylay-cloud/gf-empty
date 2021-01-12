@@ -14,6 +14,17 @@
     Level       = "all"
     Stdout      = true
 
+    # 自定义异常日志对象
+    [logger.exception]
+        path   = "./log/gf-app/exception"
+        level  = "all"
+        stdout = true
+
+    # 自定义业务日志对象
+    [logger.business]
+          path   = "./log/gf-app/business"
+          level  = "all"
+          stdout = true
 # 模板
 [viewer]
     Path        = "template"

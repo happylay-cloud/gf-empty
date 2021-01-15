@@ -16,8 +16,8 @@ cd ..
 # 打包swagger接口文件（根据选择注释）
 gfctl swagger --pack -y
 
-# 打包静态资源文件（根据选择注释）
-gfctl pack public,template packed/data.go -y
+# 打包静态资源文件及sqlite3数据库文件（根据选择注释）
+gfctl pack public,template,db packed/data.go -y
 
 cd ./script
 

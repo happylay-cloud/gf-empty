@@ -39,8 +39,8 @@
     [database.default]
         link = "sqlite:./db/sqlite3.db"
         debug = true
-    [database.user]
-        link = "mysql:root:root@tcp(127.0.0.1:3306)/user"
+    [database.mysql]
+        link = "mysql:root:root@tcp(127.0.0.1:3306)/casbin"
         debug = true
     # 数据库日志
     [database.logger]

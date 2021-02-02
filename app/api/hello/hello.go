@@ -2,10 +2,11 @@ package hello
 
 import (
 	"github.com/gogf/gf"
-	"github.com/gogf/gf-empty/library/request"
-	"github.com/gogf/gf-empty/library/response"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+
+	"github.com/gogf/gf-empty/library/request"
+	"github.com/gogf/gf-empty/library/response"
 )
 
 // Hello 是一个用于输出"Hello World!"的演示路由处理程序。
